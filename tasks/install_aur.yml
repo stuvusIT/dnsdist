@@ -1,0 +1,6 @@
+---
+- name: Install dnsdist package
+  aur:
+    name: dnsdist
+    user: "{{ global_aur_user | mandatory }}"
+    dir: "{{ global_cache_dir | mandatory }}"

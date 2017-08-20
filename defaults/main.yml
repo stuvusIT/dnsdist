@@ -1,0 +1,4 @@
+---
+dnsdist_repo_ver: 11
+dnsdist_config: ""
+dnsdist_no_restart: false
