@@ -23,7 +23,7 @@ Arch Linux or Ubuntu
 - hosts: dns
   roles:
   - dnsdist
-     dnsdist_config: >
+     dnsdist_config: |
        setLocal('0.0.0.0:53', { toTCP=true, reusePort=true, })
        newServer({address="2001:4860:4860::8888", qps=1})
        setServerPolicy(firstAvailable)
