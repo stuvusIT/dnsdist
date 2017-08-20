@@ -1,0 +1,6 @@
+---
+- name: Restart dnsdist
+  service:
+    name: dnsdist.service
+    state: restarted
+  when: not dnsdist_start.changed and not dnsdist_no_restart
