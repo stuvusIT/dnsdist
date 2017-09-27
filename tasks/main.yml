@@ -1,10 +1,8 @@
 ---
-- include: install_apt.yml
-  static: no
+- include_tasks: install_apt.yml
   when: ansible_pkg_mgr == "apt"
 
-- include: install_aur.yml
-  static: no
+- include_tasks: install_aur.yml
   when: ansible_pkg_mgr == "pacman"
 
 - name: Create configuration file
