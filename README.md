@@ -8,13 +8,14 @@ Arch Linux or Ubuntu
 
 ## Role Variables
 
-| Name                 | Default/Required   | Description                                                                          |
-|----------------------|:------------------:|--------------------------------------------------------------------------------------|
-| `global_aur_user`    | :heavy_check_mark: | User to use for AUR packages (Arch Linux only)                                       |
-| `global_cache_dir`   | :heavy_check_mark: | Location of the AUR cache (Arch Linux only)                                          |
-| `dnsdist_repo_ver`   | `12`               | Version of the apt repository for dnsdist (Ubuntu only)                              |
-| `dnsdist_config`     |                    | Configuration of dnsdist (will be put to the configuration file as-is)               |
-| `dnsdist_no_restart` | `false`            | Set this to true to prevent dnsdist from being restarted after configuration changes |
+| Name                   | Default/Required   | Description                                                                          |
+|------------------------|:------------------:|--------------------------------------------------------------------------------------|
+| `global_aur_user`      | :heavy_check_mark: | User to use for AUR packages (Arch Linux only)                                       |
+| `global_cache_dir`     | :heavy_check_mark: | Location of the AUR cache (Arch Linux only)                                          |
+| `dnsdist_repo_ver`     | `12`               | Version of the apt repository for dnsdist (Ubuntu only)                              |
+| `dnsdist_config`       |                    | Configuration of dnsdist (will be put to the configuration file as-is)               |
+| `dnsdist_no_restart`   | `false`            | Set this to true to prevent dnsdist from being restarted after configuration changes |
+| `dnsdist_limit_nofile` | ` `                | Limit of file handles of dnsdist                                                     |
 
 ## Example Playbook
 
