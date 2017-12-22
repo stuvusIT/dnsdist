@@ -14,6 +14,39 @@
     group: root
   notify: Restart dnsdist
 
+- name: Create override directory
+  file:
+    path: /etc/systemd/system/dnsdist.service.d
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  when: dnsdist_limit_nofile is defined
+
+- name: Create override configuration
+  template:
+    src: nofile.conf.j2
+    dest: /etc/systemd/system/dnsdist.service.d/nofile.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: dnsdist_limit_nofile is defined
+  register: create_override
+  notify: Restart dnsdist
+
+- name: Delete override configuration
+  file:
+    path: /etc/systemd/system/dnsdist.service.d/nofile.conf
+    state: absent
+  when: dnsdist_limit_nofile is not defined
+  register: delete_override
+  notify: Restart dnsdist
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: true
+  when: create_override.changed or delete_override.changed
+
 - name: Enable dnsdist
   service:
     name: dnsdist.service
