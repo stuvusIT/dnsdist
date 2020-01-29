@@ -1,4 +1,4 @@
-# dnsdist 
+# dnsdist
 
 This role installs and configures PowerDNS dnsdist.
 dnsdist is automatically restarted after configuration changes, unless the role variables say otherwise.
