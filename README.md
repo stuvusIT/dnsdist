@@ -5,7 +5,7 @@ dnsdist is automatically restarted after configuration changes, unless the role 
 
 ## Requirements
 
-Debian or Ubuntu
+Debian 11 (Bullseye)
 
 ## Role Variables
 
